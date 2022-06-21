@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<obcansky_prukaz xmlns="https://www.posd03-ns.cz/LS2021"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="https://www.posd03-ns.cz/LS2021 posd03_schema.xsd"
+    id="552945357">
+    <osobni_udaje rodne_cislo="005319/1498">
+        <jmeno>Veronika</jmeno>
+        <prijmeni>Nováková</prijmeni>
+        <pohlavi>Žena</pohlavi>
+        <rodinny_stav>svobodná</rodinny_stav>
+    </osobni_udaje>
+    <narozeni>
+        <datum typ="narozeni">
+            <den>19</den>
+            <mesic>3</mesic>
+            <rok>2000</rok>
+        </datum>
+        <misto>
+            <mesto>Praha</mesto>
+            <obvod>Vinohrady</obvod>
+        </misto>
+    </narozeni>
+    <obcanstvi>Česká republika</obcanstvi>
+    <platnost>
+        <datum typ="vydani">
+            <den>25</den>
+            <mesic>5</mesic>
+            <rok>2015</rok>
+        </datum>
+        <datum typ="vyprseni">
+            <den>25</den>
+            <mesic>5</mesic>
+            <rok>2025</rok>
+        </datum>
+    </platnost>
+    <adresa druh="postovni">
+        <mesto>Nymburk</mesto>
+        <ulice>Česká</ulice>
+        <cp>1900</cp>
+        <okres>Nymburk-Jih</okres>
+    </adresa>
+    <vydavatel>Městský úrad Nymburk</vydavatel>
+</obcansky_prukaz>

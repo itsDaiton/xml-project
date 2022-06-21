@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<obcansky_prukaz xmlns="https://www.posd03-ns.cz/LS2021"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="https://www.posd03-ns.cz/LS2021 posd03_schema.xsd"
+    id="156287954">
+    <osobni_udaje rodne_cislo="891026/9323">
+        <jmeno>Šimon</jmeno>
+        <prijmeni>Procházka</prijmeni>
+        <pohlavi>Muž</pohlavi>
+        <rodinny_stav>svobodný</rodinny_stav>
+    </osobni_udaje>
+    <narozeni>
+        <datum typ="narozeni">
+            <den>26</den>
+            <mesic>10</mesic>
+            <rok>1989</rok>
+        </datum>
+        <misto>
+            <mesto>Ostrava</mesto>
+            <obvod>Krásné Pole</obvod>
+        </misto>
+    </narozeni>
+    <obcanstvi>Česká republika</obcanstvi>
+    <platnost>
+        <datum typ="vydani">
+            <den>5</den>
+            <mesic>12</mesic>
+            <rok>2011</rok>
+        </datum>
+        <datum typ="vyprseni">
+            <den>5</den>
+            <mesic>12</mesic>
+            <rok>2021</rok>
+        </datum>
+    </platnost>
+    <adresa druh="postovni">
+        <mesto>Třeboň</mesto>
+        <ulice>Kapří</ulice>
+        <cp>1000</cp>
+        <okres>Třebon-Lužnice</okres>
+    </adresa>
+    <vydavatel>Úřad města Třeboň</vydavatel>
+</obcansky_prukaz>

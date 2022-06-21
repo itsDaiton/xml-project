@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<obcansky_prukaz xmlns="https://www.posd03-ns.cz/LS2021"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="https://www.posd03-ns.cz/LS2021 posd03_schema.xsd"
+    id="248699316">
+    <osobni_udaje rodne_cislo="980707/0594">
+        <jmeno>Ondřej</jmeno>
+        <prijmeni>Rychlý</prijmeni>
+        <pohlavi>Muž</pohlavi>
+        <rodinny_stav>svobodný</rodinny_stav>
+    </osobni_udaje>
+    <narozeni>
+        <datum typ="narozeni">
+            <den>7</den>
+            <mesic>7</mesic>
+            <rok>1998</rok>
+        </datum>
+        <misto>
+            <mesto>Praha</mesto>
+            <obvod>Žižkov</obvod>
+        </misto>
+    </narozeni>
+    <obcanstvi>Česká republika</obcanstvi>
+    <platnost>
+        <datum typ="vydani">
+            <den>19</den>
+            <mesic>2</mesic>
+            <rok>2018</rok>
+        </datum>
+        <datum typ="vyprseni">
+            <den>19</den>
+            <mesic>2</mesic>
+            <rok>2028</rok>
+        </datum>
+    </platnost>
+    <adresa druh="postovni">
+        <mesto>Jesenice</mesto>
+        <ulice>Okružní</ulice>
+        <cp>1289</cp>
+        <okres>Praha-Západ</okres>
+    </adresa>
+    <vydavatel>UMČ Praha 11</vydavatel>
+</obcansky_prukaz>

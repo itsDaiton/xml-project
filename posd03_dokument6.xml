@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<obcansky_prukaz xmlns="https://www.posd03-ns.cz/LS2021"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="https://www.posd03-ns.cz/LS2021 posd03_schema.xsd"
+    id="614889331">
+    <osobni_udaje rodne_cislo="560920/6378">
+        <jmeno>Antonín</jmeno>
+        <prijmeni>Zpěvák</prijmeni>
+        <pohlavi>Muž</pohlavi>
+        <rodinny_stav>ženatý</rodinny_stav>
+    </osobni_udaje>
+    <narozeni>
+        <datum typ="narozeni">
+            <den>20</den>
+            <mesic>9</mesic>
+            <rok>1956</rok>
+        </datum>
+        <misto>
+            <mesto>Opava</mesto>
+            <obvod>Otice</obvod>
+        </misto>
+    </narozeni>
+    <obcanstvi>Česká republika</obcanstvi>
+    <platnost>
+        <datum typ="vydani">
+            <den>26</den>
+            <mesic>11</mesic>
+            <rok>2004</rok>
+        </datum>
+        <datum typ="vyprseni">
+            <den>26</den>
+            <mesic>11</mesic>
+            <rok>2014</rok>
+        </datum>
+    </platnost>
+    <adresa druh="postovni">
+        <mesto>Olomouc</mesto>
+        <ulice>Kulatá</ulice>
+        <cp>1523</cp>
+        <okres>Jeseník</okres>
+    </adresa>
+    <vydavatel>Magistrát města Olomouce</vydavatel>
+</obcansky_prukaz>

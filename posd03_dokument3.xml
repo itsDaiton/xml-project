@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<obcansky_prukaz xmlns="https://www.posd03-ns.cz/LS2021"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="https://www.posd03-ns.cz/LS2021 posd03_schema.xsd"
+    id="602397400">
+    <osobni_udaje rodne_cislo="500111/3658">
+        <jmeno>František</jmeno>
+        <prijmeni>Odvarka</prijmeni>
+        <pohlavi>Muž</pohlavi>
+        <rodinny_stav>rozvedený</rodinny_stav>
+    </osobni_udaje>
+    <narozeni>
+        <datum typ="narozeni">
+            <den>1</den>
+            <mesic>11</mesic>
+            <rok>1950</rok>
+        </datum>
+        <misto>
+            <mesto>Česká Skalice</mesto>
+            <obvod>Velká Jesenice</obvod>
+        </misto>
+    </narozeni>
+    <obcanstvi>Česká republika</obcanstvi>
+    <platnost>
+        <datum typ="vydani">
+            <den>10</den>
+            <mesic>1</mesic>
+            <rok>1980</rok>
+        </datum>
+        <datum typ="vyprseni">
+            <den>10</den>
+            <mesic>1</mesic>
+            <rok>1990</rok>
+        </datum>
+    </platnost>
+    <adresa druh="postovni">
+        <mesto>Karlovy Vary</mesto>
+        <ulice>Upsaná</ulice>
+        <cp>12</cp>
+        <okres>Nejdek-Vary</okres>
+    </adresa>
+    <vydavatel>Magistrát města Karlovy Vary</vydavatel>
+</obcansky_prukaz>

@@ -1,0 +1,308 @@
+<html xmlns:ng="http://docbook.org/docbook-ng"><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>Semestr&aacute;ln&iacute; pr&aacute;ce - evidence ob&#269;ansk&yacute;ch pr&#367;kaz&#367;</title><meta name="generator" content="DocBook XSL Stylesheets V1.79.2"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div lang="cs" class="book"><div class="titlepage"><div><div><h1 class="title"><a name="d5e1"></a>Semestr&aacute;ln&iacute; pr&aacute;ce - evidence ob&#269;ansk&yacute;ch pr&#367;kaz&#367;</h1></div><div><div class="author"><h3 class="author"><span class="firstname">David</span> <span class="surname">Poslu&#353;n&yacute;</span></h3><code class="email">&lt;<a class="email" href="mailto:posd03@vse.cz">posd03@vse.cz</a>&gt;</code></div></div></div><hr></div><div class="toc"><p><b>Obsah</b></p><dl class="toc"><dt><span class="index"><a href="#d5e9">Rejst&#345;&iacute;k</a></span></dt><dt><span class="preface"><a href="#d5e10">&Uacute;vod</a></span></dt><dt><span class="chapter"><a href="#d5e25">1. XML dokument</a></span></dt><dt><span class="chapter"><a href="#d5e111">2. XML schema</a></span></dt><dt><span class="chapter"><a href="#d5e144">3. Schematron</a></span></dt><dt><span class="chapter"><a href="#d5e167">4. HTML transformace</a></span></dt><dt><span class="chapter"><a href="#d5e244">5. PDF transformace</a></span></dt></dl></div><div class="list-of-tables"><p><b>Seznam tabulek</b></p><dl><dt>1.1. <a href="#d5e38">Popis element&#367;</a></dt></dl></div><div class="index"><div class="titlepage"><div><div><h1 class="title"><a name="d5e9"></a>Rejst&#345;&iacute;k</h1></div></div></div><div xmlns:xlink="http://www.w3.org/1999/xlink" class="index"><div class="indexdiv"><h3>H</h3><dl><dt id="ientry-d5e19">HTML, <a class="indexterm" href="#d5e10">&Uacute;vod</a>, <a class="indexterm" href="#d5e167">HTML transformace</a>, <a class="indexterm" href="#d5e244">PDF transformace</a></dt></dl></div><div class="indexdiv"><h3>P</h3><dl><dt id="ientry-d5e23">PDF, <a class="indexterm" href="#d5e10">&Uacute;vod</a>, <a class="indexterm" href="#d5e244">PDF transformace</a></dt></dl></div><div class="indexdiv"><h3>S</h3><dl><dt id="ientry-d5e17">schematron, <a class="indexterm" href="#d5e10">&Uacute;vod</a>, <a class="indexterm" href="#d5e144">Schematron</a></dt></dl></div><div class="indexdiv"><h3>X</h3><dl><dt id="ientry-d5e13">XML, <a class="indexterm" href="#d5e10">&Uacute;vod</a>, <a class="indexterm" href="#d5e25">XML dokument</a>, <a class="indexterm" href="#d5e111">XML schema</a>, <a class="indexterm" href="#d5e144">Schematron</a>, <a class="indexterm" href="#d5e167">HTML transformace</a></dt><dt id="ientry-d5e21">XSLT, <a class="indexterm" href="#d5e10">&Uacute;vod</a>, <a class="indexterm" href="#d5e167">HTML transformace</a>, <a class="indexterm" href="#d5e244">PDF transformace</a></dt></dl></div></div></div><div class="preface"><div class="titlepage"><div><div><h1 class="title"><a name="d5e10"></a>&Uacute;vod</h1></div></div></div><p> Tato dokumentace obsahuje popis v&#353;ech vytvo&#345;en&yacute;ch &#269;&aacute;st&iacute; semestr&aacute;ln&iacute; pr&aacute;ce v p&#345;edm&#283;tu
+            4IZ238 XML<a class="indexterm" name="d5e13"></a> - Teorie a praxe zna&#269;kovac&iacute;ch
+            jazyk&#367;. D&aacute;le lze v dokumentaci nal&eacute;zt uk&aacute;zky k&oacute;du a soupis element&#367; tvo&#345;&iacute;c&iacute; vytvo&#345;en&yacute;
+            zna&#269;kovac&iacute; jazyk. V semestr&aacute;ln&iacute; pr&aacute;ci bylo za &uacute;kol vytvo&#345;it
+                    XML<a class="indexterm" name="d5e15"></a> dokument a k n&#283;mu navrhnout
+            odpov&iacute;daj&iacute;c&iacute; sch&eacute;ma i s vyu&#382;it&iacute;m
+                schematronu<a class="indexterm" name="d5e17"></a>. Pot&eacute; bylo nutn&eacute;
+            dan&yacute; dokument, pop&#345;&iacute;pad&#283; dokumenty, p&#345;ev&eacute;st do zna&#269;kovac&iacute;ho jazyka
+                    HTML<a class="indexterm" name="d5e19"></a> pomoc&iacute;
+                    XSLT<a class="indexterm" name="d5e21"></a> styl&#367; a tak&eacute; vyu&#382;&iacute;t procesor
+            FO pro p&#345;evod pr&aacute;ce do form&aacute;tu PDF<a class="indexterm" name="d5e23"></a>. </p></div><div class="chapter"><div class="titlepage"><div><div><h1 class="title"><a name="d5e25"></a>Kapitola 1. XML<a class="indexterm" name="d5e27"></a> dokument</h1></div></div></div><p>
+            Jako XML<a class="indexterm" name="d5e30"></a> dokument jsem se v m&eacute; semestr&aacute;ln&iacute; pr&aacute;ce rozhodl vytvo&#345;it ob&#269;ansk&yacute; pr&#367;kaz, respektive evidenci
+            ob&#269;ansk&yacute;ch pr&#367;kaz&#367;, proto&#382;e dokument&#367; vytv&aacute;&#345;&iacute;m v&iacute;ce. Bylo tedy nutn&eacute; zjistit, kter&eacute; v&#353;echny &uacute;daje se vyskytuj&iacute;
+            na skute&#269;n&eacute;m ob&#269;ansk&eacute;m pr&#367;kazu a p&#345;etvo&#345;it je na XML<a class="indexterm" name="d5e32"></a> elementy.
+        </p><p>
+            XML<a class="indexterm" name="d5e35"></a> dokument se d&#283;l&iacute; v celku na 4 &#269;&aacute;sti, kde ka&#382;d&aacute; &#269;&aacute;st v&#382;dy obsahuje n&#283;jak&eacute; &uacute;daje o dr&#382;iteli pr&#367;kazu. 
+            Prvn&iacute; &#269;&aacute;st jsou osobn&iacute; &uacute;daje jako nap&#345;. jm&eacute;no, p&#345;&iacute;jmen&iacute;, pohlav&iacute;. Druh&aacute; &#269;&aacute;st obsahuje informace o datu a m&iacute;stu narozen&iacute;.
+            V t&#345;et&iacute; &#269;&aacute;sti jsou zaznamen&aacute;ny informace o platnosti samotn&eacute;ho pr&#367;kazu a v posledn&iacute; &#269;&aacute;sti je uvedeno trval&eacute; bydli&#353;t&#283;, tj.
+            adresa dan&eacute;ho &#269;lov&#283;ka. Informace o ob&#269;anstv&iacute; a vydavateli pr&#367;kazu nejsou zahrnuty do &#382;&aacute;dn&eacute; &#269;&aacute;sti.           
+        </p><p>
+            Popis ka&#382;d&eacute;ho konkr&eacute;tn&iacute;ho elementu v dokumentu vysv&#283;tluje n&aacute;sleduj&iacute;c&iacute; tabulka:
+            </p><div class="table"><a name="d5e38"></a><p class="title"><b>Tabulka 1.1. Popis element&#367;</b></p><div class="table-contents"><table class="table" summary="Popis element&#367;" border="1"><colgroup><col width="4cm" align="center"><col width="10cm" align="left"></colgroup><thead><tr><th align="center">Element</th><th align="left">Popis</th></tr></thead><tbody><tr><td align="center">obcansky_prukaz</td><td align="left">ko&#345;enov&yacute; element, kter&yacute; obsahuje atribut id, tj. identifika&#269;n&iacute; &#269;&iacute;slo pr&#367;kazu</td></tr><tr><td align="center">osobni_udaje</td><td align="left">element, kter&yacute; seskupuje osobn&iacute; &uacute;daje a m&aacute; jako atribut rodn&eacute; &#269;&iacute;slo dr&#382;itele pr&#367;kazu</td></tr><tr><td align="center">jmeno</td><td align="left">k&#345;estn&iacute; jm&eacute;no dr&#382;itele</td></tr><tr><td align="center">prijmeni</td><td align="left">p&#345;&iacute;jmen&iacute; dr&#382;itele</td></tr><tr><td align="center">pohlavi</td><td align="left">pohlav&iacute; dr&#382;itele</td></tr><tr><td align="center">rodinny_stav</td><td align="left">rodinn&yacute; stav dr&#382;itele (svobodn&yacute;, rozveden&aacute;, vdan&aacute;...)</td></tr><tr><td align="center">narozeni</td><td align="left">element, kter&yacute; seskupuje &uacute;daje o datu a m&iacute;stu narozen&iacute; dr&#382;itele</td></tr><tr><td align="center">datum</td><td align="left">element, kter&yacute; seskupuje &uacute;daje o n&#283;jak&eacute;m datu - typ data je ur&#269;en jeho atributem</td></tr><tr><td align="center">den</td><td align="left">den v m&#283;s&iacute;ci</td></tr><tr><td align="center">mesic</td><td align="left">m&#283;s&iacute;c v roce</td></tr><tr><td align="center">rok</td><td align="left">rok, kter&yacute; spole&#269;n&#283; s dnem a m&#283;s&iacute;cem tvo&#345;&iacute; datum</td></tr><tr><td align="center">misto</td><td align="left">element seskupuj&iacute;c&iacute; informace o m&iacute;stu narozen&iacute;</td></tr><tr><td align="center">mesto</td><td align="left">m&#283;sto, pop&#345;&iacute;pad&#283; obec narozen&iacute; dr&#382;itele</td></tr><tr><td align="center">obvod</td><td align="left">m&#283;stsk&aacute; &#269;&aacute;st &#269;i m&#283;stsk&yacute; obvod dan&eacute;ho m&#283;sta/obce</td></tr><tr><td align="center">obcanstvi</td><td align="left">informace o tom, v jak&eacute; zemi m&aacute; dr&#382;itel pr&aacute;vem p&#345;iznan&eacute; ob&#269;anstv&iacute;</td></tr><tr><td align="center">platnost</td><td align="left">element seskupuj&iacute;c&iacute; data platnosti pr&#367;kazu</td></tr><tr><td align="center">adresa</td><td align="left">element, kter&yacute; seskupuje podrobn&eacute; informace o trval&eacute;m bydli&#353;t&#283; dr&#382;itele</td></tr><tr><td align="center">ulice</td><td align="left">ulice, v kter&eacute; dr&#382;itel bydl&iacute;</td></tr><tr><td align="center">cp</td><td align="left">&#269;&iacute;slo popisn&eacute; domu, ve kter&eacute;m dr&#382;itel bydl&iacute;</td></tr><tr><td align="center">okres</td><td align="left">okres do kter&eacute;ho pat&#345;&iacute; m&#283;sto/obec v kter&eacute;m dr&#382;itel bydl&iacute;</td></tr><tr><td align="center">vydavatel</td><td align="left">informace o tom, kter&yacute; &uacute;&#345;ad tento pr&#367;kaz vydal</td></tr></tbody></table></div></div><p><br class="table-break">
+        </p></div><div class="chapter"><div class="titlepage"><div><div><h1 class="title"><a name="d5e111"></a>Kapitola 2. XML<a class="indexterm" name="d5e113"></a> schema</h1></div></div></div><p> Soubor obsahuj&iacute;c&iacute; XML<a class="indexterm" name="d5e116"></a> sch&eacute;ma
+                <code class="filename">posd03_schema.xsd</code> v semestr&aacute;ln&iacute; pr&aacute;ci vyu&#382;&iacute;v&aacute;m pro validaci
+                    XML<a class="indexterm" name="d5e119"></a> dokumentu. Sch&eacute;ma bylo
+            vytvo&#345;eno podle metody slep&eacute;ho Ben&aacute;t&#269;ana a obsahuje strukturu a kontroly, kter&eacute; mus&iacute;
+            vytvo&#345;en&eacute; XML<a class="indexterm" name="d5e121"></a> dokumenty spl&#328;ovat. </p><p>
+            Ve sch&eacute;matu nej&#269;ast&#283;ji kontroluji form&aacute;ty jednotliv&yacute;ch element&#367; p&#345;es regul&aacute;rn&iacute; v&yacute;razy. 
+            Nap&#345;&iacute;klad pro rodn&eacute; &#269;&iacute;slo, n&aacute;zev &#269;esk&eacute;ho m&#283;sta nebo identifika&#269;n&iacute; &#269;&iacute;slo. Nutn&eacute; bylo tak&eacute; zkontrolovat
+            form&aacute;ty dat u platnosti pr&#367;kazu a u data narozen&iacute;. U jednoduch&yacute;ch textov&yacute;ch &uacute;daj&#367; jako je nap&#345;&iacute;klad jm&eacute;no,
+            p&#345;&iacute;jmen&iacute;, pohlav&iacute; sta&#269;ilo pouze omezit po&#269;et znak&#367;.
+        </p><p>
+            <span class="strong"><strong>P&#345;&iacute;klad kontroly rodn&eacute;ho &#269;&iacute;sla</strong></span>
+            </p><div class="literallayout"><p><code class="code">&lt;xsd:simpleType&nbsp;name="rodne_cisloType"&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;xsd:restriction&nbsp;base="xsd:string"&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xsd:pattern&nbsp;value="[0-9]{6}\/[0-9]{4}"/&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/xsd:restriction&gt;<br>
+&lt;/xsd:simpleType&gt;</code></p></div><p> Tato kontrola konkr&eacute;tn&#283; vyu&#382;&iacute;v&aacute; regul&aacute;rn&iacute; v&yacute;raz. Jedn&aacute; se o lehk&yacute; v&yacute;raz, kter&yacute; n&aacute;m
+            zajist&iacute;, &#382;e prvn&iacute;ch 6 znak&#367; budou pouze &#269;&iacute;slice, d&aacute;le mus&iacute; b&yacute;t uvedeno lom&iacute;tko, kter&eacute;mu
+            n&aacute;sleduj&iacute; 4 &#269;&iacute;slice. Pokud tento form&aacute;t nebude spln&#283;n, sch&eacute;ma n&aacute;m vyhod&iacute; chybu a dan&yacute;
+            pattern se n&aacute;m uk&aacute;&#382;e, abychom pot&eacute; data mohli do elementu napsat spr&aacute;vn&#283;. </p><p>
+            <span class="strong"><strong>P&#345;&iacute;klad kontroly rodinn&eacute;ho stavu</strong></span>
+            </p><div class="literallayout"><p><code class="code">&lt;xsd:simpleType&nbsp;name="rodinny_stavType"&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;xsd:restriction&nbsp;base="xsd:string"&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xsd:enumeration&nbsp;value="svobodn&yacute;"/&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xsd:enumeration&nbsp;value="&#382;enat&yacute;"/&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xsd:enumeration&nbsp;value="rozveden&yacute;"/&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xsd:enumeration&nbsp;value="vdovec"/&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xsd:enumeration&nbsp;value="svobodn&aacute;"/&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xsd:enumeration&nbsp;value="vdan&aacute;"/&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xsd:enumeration&nbsp;value="rozveden&aacute;"/&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xsd:enumeration&nbsp;value="vdova"/&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/xsd:restriction&gt;<br>
+&lt;/xsd:simpleType&gt;</code>&nbsp;</p></div><p>
+            Rodinn&yacute; stav nem&#367;&#382;e nab&yacute;vat jin&yacute;ch hodnot, ne&#382; uveden&yacute;ch ve v&yacute;&#269;tu [<span class="citation">rodinny_stavType</span>].
+            V t&eacute;to kontrole se jedn&aacute; o vyu&#382;it&iacute; <code class="code">&lt;xsd:enumeration/&gt;</code> kde m&#367;&#382;eme v&yacute;&#269;tem ur&#269;it,
+            kter&eacute; hodnoty se p&#345;esn&#283; mus&iacute; v dan&eacute;m elementu objevovat. Nelze tedy nap&#345;&iacute;klad do rodinn&eacute;ho stavu napsat
+            anglick&yacute; v&yacute;raz "single" m&iacute;sto "svobodn&yacute;", nebo jak&yacute;koliv jin&yacute; textov&yacute; &#345;et&#283;zec.
+        </p><p> Ve sch&eacute;matu jsem tak&eacute; vyu&#382;il referen&#269;n&iacute; integritu, konkr&eacute;tn&#283; 2 pravidla, kter&eacute;
+            kontroluj&iacute; unik&aacute;tnosti atribut&#367; v ur&#269;it&yacute;ch elementech. </p><p>
+            <span class="strong"><strong>Uk&aacute;zka referen&#269;&iacute; integrity</strong></span>
+            </p><div class="literallayout"><p><code class="code">&lt;xsd:key&nbsp;name="unikatniTypyDatumu"&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;xsd:selector&nbsp;xpath="prefix:platnost/prefix:datum"/&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;xsd:field&nbsp;xpath="@typ"/&gt;<br>
+&lt;/xsd:key&gt;</code></p></div><p> Z k&oacute;du lze vid&#283;t, &#382;e se zakli&#269;uje datum v platnosti, nikoliv v narozen&iacute;, a pot&eacute;
+            pomoc&iacute; elementu [<span class="citation">field</span>] z jmenn&eacute;ho prostoru [<span class="citation">xsd</span>]
+            nastav&iacute;me, &#382;e dan&aacute; data nesm&iacute; m&iacute;t stejnou hodnotu atributu. Toto pravidlo jsem vytvo&#345;il
+            za &uacute;&#269;elem, aby nebylo mo&#382;n&eacute; m&iacute;t v dokumentu dvakr&aacute;t datum vypr&#353;en&iacute; &#269;i datum vyd&aacute;n&iacute;. </p></div><div class="chapter"><div class="titlepage"><div><div><h1 class="title"><a name="d5e144"></a>Kapitola 3. Schematron<a class="indexterm" name="d5e146"></a></h1></div></div></div><p> Dal&#353;&iacute;m &uacute;kolem v semestr&aacute;ln&iacute; pr&aacute;ci bylo roz&#353;&iacute;&#345;it p&#345;edchoz&iacute;
+                    XML<a class="indexterm" name="d5e149"></a> sch&eacute;ma o
+                    schematron<a class="indexterm" name="d5e151"></a>, &#269;i vytvo&#345;it
+            samostatn&yacute; soubor s danou technologi&iacute;. V t&eacute;to pr&aacute;ci jsem se rozhodl vytvo&#345;it nov&yacute; soubor
+                        <code class="filename">posd03_schematron<a class="indexterm" name="d5e154"></a>.sch</code>
+            a do n&#283;j vlo&#382;it danou kontrolu. </p><p>
+            <span class="strong"><strong>Kontrola pomoc&iacute;
+                        schematronu<a class="indexterm" name="d5e158"></a></strong></span>
+            </p><div class="literallayout"><p><code class="code">&lt;pattern&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;Kontrola&nbsp;platnosti&nbsp;pr&#367;kazu&lt;/title&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;rule&nbsp;context="prefix:obcansky_prukaz"&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;report&nbsp;test="prefix:platnost[1]/prefix:datum[2]/prefix:rok[1]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;!=&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(prefix:platnost[1]/prefix:datum[1]/prefix:rok[1])&nbsp;+&nbsp;10"&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Pr&#367;kaz&nbsp;mus&iacute;&nbsp;b&yacute;t&nbsp;platn&yacute;&nbsp;10&nbsp;let&nbsp;od&nbsp;jeho&nbsp;vyd&aacute;n&iacute;.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Sou&#269;asn&aacute;&nbsp;platnost&nbsp;je:&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;value-of&nbsp;select="prefix:platnost[1]/prefix:datum[2]/prefix:rok[1]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;prefix:platnost[1]/prefix:datum[1]/prefix:rok[1]"/&gt;&nbsp;let.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/report&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/rule&gt;<br>
+&lt;/pattern&gt;</code>&nbsp;</p></div><p> Jak je vid&#283;t z titulku pravidla, jedn&aacute; se o kontrolu platnosti pr&#367;kazu. Ve sch&eacute;matu
+            provedeme [<span class="citation">test</span>], kter&yacute; n&aacute;m otestuje, jestli je rozd&iacute;l obou dat v
+            platnosti 10 &#269;i nikoliv. Pomoc&iacute; elementu [<span class="citation">report</span>] pak dostaneme
+            zpr&aacute;vu o v&yacute;sledku testu a tak&eacute; se u&#382;ivateli vyp&iacute;&#353;e sou&#269;asn&aacute; platnost, tj. pokud
+            nap&#345;&iacute;klad pr&#367;kaz plat&iacute; od 2005 do 2025, tak je to &#353;patn&#283;, proto&#382;e to nen&iacute; 10 let, ale 20
+            let. Pravidlo ne&#345;e&#353;&iacute; dny a m&#283;s&iacute;ce, ale pouze roky. Smysl tohoto pravidla je, &#382;e v &#268;esk&eacute;
+            republice se ob&#269;ansk&eacute; pr&#367;kazy vyd&aacute;vaj&iacute; s platnost&iacute; 5 let pro osoby mlad&#353;&iacute; 15 let, s
+            platnost&iacute; 10 let pro osoby star&#353;&iacute; 15 let a pot&eacute; ji&#382; s platnost&iacute; 35 let pro osoby sta&#345;&iacute;
+            75 let. Po&#269;&iacute;tat v&#283;k dan&eacute;ho dr&#382;itele z XML<a class="indexterm" name="d5e165"></a>
+            dokumentu a pot&eacute; rozli&#353;ovat platnost jednotliv&yacute;ch pr&#367;kazu mi p&#345;i&#353;lo moc slo&#382;it&eacute;, proto
+            jsem tedy platnost standardizoval na 10 let. </p></div><div class="chapter"><div class="titlepage"><div><div><h1 class="title"><a name="d5e167"></a>Kapitola 4. HTML<a class="indexterm" name="d5e169"></a> transformace</h1></div></div></div><p> Transformaci do zna&#269;kovac&iacute;ho jazyka
+                HTML<a class="indexterm" name="d5e172"></a> jsem provedl pomoc&iacute;
+                    XSLT<a class="indexterm" name="d5e174"></a> styl&#367; ulo&#382;en&yacute;ch v souboru
+                <code class="filename">posd03_xslt.xsl</code>. Soubor je tvo&#345;en pomoc&iacute; templat&#367;, kter&eacute; n&aacute;m
+            pom&aacute;haj&iacute; dan&yacute; v&yacute;stup z XML<a class="indexterm" name="d5e177"></a> dokumentu
+            p&#345;ev&eacute;st do HTML<a class="indexterm" name="d5e179"></a>. Jeliko&#382; jsem m&#283;l v&iacute;ce
+            ob&#269;ansk&yacute;ch pr&#367;kaz&#367; a nem&#283;l jsem vytvo&#345;en&yacute; &#382;&aacute;dn&yacute; ko&#345;enov&yacute; element
+                [<span class="citation">evidence</span>] nebo n&#283;co obdobn&eacute;ho, bylo nutn&eacute; vytvo&#345;it nov&yacute; soubor
+                <code class="filename">posd03_evidence.xml</code>, v kter&eacute;m jsem p&#345;ipojil v&#353;echny vytvo&#345;en&eacute;
+                    XML<a class="indexterm" name="d5e183"></a> dokumenty do jednoho souboru,
+            aby jej mohly XSLT<a class="indexterm" name="d5e185"></a> styly rozpoznat a
+            &uacute;sp&#283;&#353;n&#283; transformovat. </p><p>
+            <span class="strong"><strong>Soubor evidence, kter&yacute; seskupuje v&#353;echny
+                        XML<a class="indexterm" name="d5e189"></a> dokumenty</strong></span>
+            </p><div class="literallayout"><p><code class="code">&lt;?xml&nbsp;version="1.0"&nbsp;encoding="UTF-8"?&gt;<br>
+&lt;evidence&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;soubor&nbsp;name="posd03_dokument1.xml"&gt;&lt;/soubor&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;soubor&nbsp;name="posd03_dokument2.xml"&gt;&lt;/soubor&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;soubor&nbsp;name="posd03_dokument3.xml"&gt;&lt;/soubor&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;soubor&nbsp;name="posd03_dokument4.xml"&gt;&lt;/soubor&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;soubor&nbsp;name="posd03_dokument5.xml"&gt;&lt;/soubor&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;soubor&nbsp;name="posd03_dokument6.xml"&gt;&lt;/soubor&gt;<br>
+&lt;/evidence&gt;</code></p></div><p>
+            Dan&yacute; soubor n&aacute;m umo&#382;&#328;uje na dokumenty odkazovat pomoc&iacute; atributu [<span class="citation">name</span>]. 
+            Pokud bychom cht&#283;li vypsat do HTML<a class="indexterm" name="d5e195"></a> obsah jednotliv&yacute;ch dokument&#367;, lze tak u&#269;init pomoc&iacute; funkce 
+            [<span class="citation">document(@name)/*</span>]. Funkce n&aacute;m vezme v&#353;echny dokumenty podle atributu a vyp&iacute;&#353;e jejich
+            cel&yacute; obsah (tento fakt zaru&#269;&iacute; [<span class="citation">*</span>]).
+        </p><p>
+            Jako prvn&iacute; jsem pomoc&iacute; transformace vytvo&#345;il hlavn&iacute; str&aacute;nku s n&aacute;zvem <code class="filename">evidence.html</code>, v kter&eacute;
+            je navigace, kter&aacute; odkazuje na jednotliv&eacute; str&aacute;nky s podrobn&yacute;m v&yacute;pisem informac&iacute; z ka&#382;d&eacute;ho ob&#269;ansk&eacute;ho pr&#367;kazu.
+            D&aacute;le je na str&aacute;nce nestrukturovan&yacute; v&yacute;&#269;et zobrazen&yacute; jako tabulka, kde m&#367;&#382;eme naj&iacute;t v&#353;echny data na jednom m&iacute;st&#283;.
+            Z&aacute;rove&#328; je na str&aacute;nce vlo&#382;en obr&aacute;zek nevypln&#283;n&eacute;ho vzoru ob&#269;ansk&eacute;ho pr&#367;kazu.
+        </p><p>
+            <span class="strong"><strong>Vytvo&#345;en&iacute; HTML kostry hlavn&iacute; str&aacute;nky</strong></span>
+            </p><div class="literallayout"><p><code class="code">&lt;xsl:template&nbsp;match="/"&gt;<br>
+&nbsp;&nbsp;&nbsp;&lt;xsl:result-document&nbsp;href="evidence.html"&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;html&nbsp;lang="cs"&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;head&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;Evidence&nbsp;ob&#269;ansk&yacute;ch&nbsp;pr&#367;kaz&#367;&lt;/title&gt;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;link&nbsp;rel="stylesheet"&nbsp;type="text/css"&nbsp;href="styles.css"/&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;meta&nbsp;name="author"&nbsp;content="David&nbsp;Poslu&#353;n&yacute;"/&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;meta&nbsp;name="viewport"&nbsp;content="width=device-width,&nbsp;initial-scale=1.0"/&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/head&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;body&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h1&gt;Evidence&nbsp;ob&#269;ansk&yacute;ch&nbsp;pr&#367;kaz&#367;&lt;/h1&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h3&gt;Obsah&nbsp;evidence&lt;/h3&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xsl:call-template&nbsp;name="navigace"/&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&nbsp;class="warning"&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*Pozn&aacute;mka:&nbsp;odkaz&nbsp;na&nbsp;konkr&eacute;tn&iacute;&nbsp;ob&#269;ansk&yacute;&nbsp;pr&#367;kaz&nbsp;je&nbsp;tvo&#345;en<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;identifika&#269;n&iacute;m&nbsp;&#269;&iacute;slem&nbsp;pr&#367;kazu&nbsp;a&nbsp;cel&yacute;m&nbsp;jm&eacute;nem&nbsp;dr&#382;itele.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/p&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h2&nbsp;class="heading-center"&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Nestrukturovan&yacute;&nbsp;v&yacute;&#269;et&nbsp;z&nbsp;evidence<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/h2&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xsl:for-each&nbsp;select="/evidence/soubor"&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xsl:apply-templates&nbsp;select="document(@name)/*"/&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/xsl:for-each&gt;</code></p></div><p> Zde m&#367;&#382;eme vid&#283;t kus k&oacute;du, kter&yacute; n&aacute;m vytvo&#345;&iacute; z&aacute;kladn&iacute; kostru
+                    HTML<a class="indexterm" name="d5e206"></a> pro hlavn&iacute; str&aacute;nku. Bylo
+            nutn&eacute; zde uv&eacute;st v&#353;echny n&aacute;le&#382;itosti HTML<a class="indexterm" name="d5e208"></a>5,
+            aby byla str&aacute;nka validn&iacute;. Do t&#283;la str&aacute;nky jsem vlo&#382;il odkaz na template navigace a tak&eacute;
+            se zde pomoc&iacute; cyklu [<span class="citation">for-each</span>] vypisuj&iacute; informace z dokument&#367; pomoc&iacute;
+            d&#345;&iacute;ve zm&iacute;n&#283;n&eacute; funkce [<span class="citation">document()</span>]. Je zde v&#353;ak d&#367;le&#382;it&eacute; ur&#269;it
+            kolikr&aacute;t se m&aacute; cyklus prov&eacute;st, v m&eacute;m p&#345;&iacute;pad&#283; kolik je tam element&#367;
+                [<span class="citation">soubor</span>], tj. kolik m&aacute;m dokument&#367;. </p><p> D&aacute;le bylo nutn&eacute; transformovat v&#353;echny dokumenty do samostatn&yacute;ch str&aacute;nek, a tak&eacute; na n&#283;
+            vytvo&#345;it odkaz. Vytvo&#345;il jsem tedy template pro ko&#345;enov&yacute; element
+                [<span class="citation">obcansky_prukaz</span>]. Uvnit&#345; templatu bylo nezbytn&eacute; pomoc&iacute; elementu
+                [<span class="citation">result-document</span>] vytvo&#345;it nov&yacute;
+                    HTML<a class="indexterm" name="d5e216"></a> dokument, stejn&yacute;m zp&#367;sobem
+            jako hlavn&iacute; str&aacute;nku. Do t&#283;chto jednotliv&yacute;ch str&aacute;nek jsem pak elementem
+                [<span class="citation">apply-imports</span>] vlo&#382;il data, kter&aacute; k dan&eacute;mu dokumentu pat&#345;&iacute; a
+            bylo pot&#345;eba u&#382; jen dokument "stylizovat". </p><p>
+            <span class="strong"><strong>Uk&aacute;zka vytvo&#345;en&iacute; str&aacute;nek pro ob&#269;ansk&eacute; pr&#367;kazy</strong></span>
+            </p><div class="literallayout"><p><code class="code">&lt;xsl:template&nbsp;match="prefix:obcansky_prukaz"&gt;<br>
+&nbsp;&nbsp;&nbsp;&lt;xsl:result-document&nbsp;href="obcansky_prukaz_{generate-id(.)}.html"&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;html&nbsp;lang="cs"&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;head&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;&lt;xsl:value-of&nbsp;select="./@id"/&gt;&lt;/title&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;link&nbsp;rel="stylesheet"&nbsp;type="text/css"&nbsp;href="styles.css"/&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;meta&nbsp;name="author"&nbsp;content="David&nbsp;Poslu&#353;n&yacute;"/&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;meta&nbsp;name="viewport"&nbsp;content="width=device-width,&nbsp;initial-scale=1.0"/&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/head&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;body&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h1&gt;Ob&#269;ansk&yacute;&nbsp;pr&#367;kaz&nbsp;-&nbsp;&#269;.&nbsp;&lt;xsl:value-of&nbsp;select="./@id"/&gt;&lt;/h1&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xsl:apply-imports/&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&nbsp;style="text-align:&nbsp;center;&nbsp;margin-top:&nbsp;50px;"&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a&nbsp;class="nav-btn"&nbsp;href="evidence.html"&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Zp&#283;t&nbsp;na&nbsp;evidenci<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/a&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/p&gt;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/body&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/html&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/xsl:result-document&gt;<br>
+&lt;/xsl:template&gt;</code></p></div><p> Pro navigaci a o&#269;&iacute;slov&aacute;n&iacute; jednotliv&yacute;ch str&aacute;nek jsem vyu&#382;il funkci
+                [<span class="citation">generate-id</span>], kter&aacute; vytvo&#345;&iacute; unik&aacute;tn&iacute; identifika&#269;n&iacute; &#269;&iacute;slo tomu
+            elementu, v kter&eacute;m se zrovna nach&aacute;z&iacute;me, co se templat&#367; t&yacute;&#269;e. Je tedy nezbytn&eacute; pomoc&iacute;
+                [<span class="citation">xpath</span>] v&yacute;razu naj&iacute;t cestu k elementu, kter&yacute; chceme vyu&#382;&iacute;t. V m&eacute;m
+            p&#345;&iacute;pad&#283; se jedn&aacute; o cel&yacute; ob&#269;ansk&yacute; pr&#367;kaz a proto vyberu element
+                [<span class="citation">obcansky_prukaz</span>]. </p><p>
+            <span class="strong"><strong>Uk&aacute;zka vytvo&#345;en&iacute; navigace</strong></span>
+            </p><div class="literallayout"><p><code class="code">&lt;xsl:template&nbsp;name="navigace"&gt;<br>
+&nbsp;&nbsp;&nbsp;&lt;ul&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;xsl:for-each&nbsp;select="//soubor"&gt;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&nbsp;class="navbar"&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a&nbsp;class="nav-btn"&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;href=<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"obcansky_prukaz_{generate-id(document(@name)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/prefix:obcansky_prukaz)}.html"&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xsl:value-of&nbsp;select="document(@name)//@id"/&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xsl:value-of&nbsp;select="document(@name)//prefix:jmeno"/&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xsl:text&gt;&amp;#032;&lt;/xsl:text&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xsl:value-of&nbsp;select="document(@name)//prefix:prijmeni"/&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xsl:apply-templates/&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/a&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;br/&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/li&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/xsl:for-each&gt;<br>
+&nbsp;&nbsp;&nbsp;&lt;/ul&gt;<br>
+&lt;/xsl:template&gt;</code></p></div><p> V tomto &uacute;seku k&oacute;du vytv&aacute;&#345;&iacute;m navigaci pomoc&iacute; zm&iacute;n&#283;n&eacute; funkce
+                [<span class="citation">generate-id</span>]. Identifika&#269;n&iacute; &#269;&iacute;slo se vytvo&#345;&iacute; pro ka&#382;d&yacute; ob&#269;ansk&yacute;
+            pr&#367;kaz a vlo&#382;&iacute; se do HTML<a class="indexterm" name="d5e233"></a> tagu
+                [<span class="citation">a</span>] jako odkaz. P&#345;i vytv&aacute;&#345;en&iacute; jednotliv&yacute;ch str&aacute;nek pro pr&#367;kazy
+            jsem do [<span class="citation">URL</span>] vlo&#382;il op&#283;t stejnou funkci a pokud se jedn&aacute; o stejn&yacute;
+            elemenent, tak ID se ulo&#382;&iacute; p&#345;&iacute;mo do odkazu na str&aacute;nku a t&iacute;m p&aacute;dem se n&aacute;m zajist&iacute;
+            funk&#269;nost navigace. Odkaz na str&aacute;nku pak m&#367;&#382;e vypadat nap&#345;&iacute;klad takto:
+                <code class="filename">obcansky_prukaz_d2e1.html</code>
+        </p><p>
+            V neposledn&iacute; &#345;ad&#283; jsem k transformaci tak&eacute; p&#345;ipojil [<span class="citation">CSS</span>] styly, pomoc&iacute; kter&yacute;ch jsem nap&#345;&iacute;klad vytvo&#345;il
+            ohrani&#269;en&iacute; tabulky, rozestup mezi textem na str&aacute;nce anebo velikost p&iacute;sma &#269;i font cel&eacute;ho dokumentu.
+        </p><p>
+            <span class="strong"><strong>Uk&aacute;zka kask&aacute;dov&yacute;ch styl&#367;</strong></span>
+            </p><div class="literallayout"><p><code class="code">html&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;font-family:&nbsp;'Segoe&nbsp;UI';&nbsp;<br>
+}<br>
+h1&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;text-align:&nbsp;center;<br>
+}<br>
+.heading-center&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;text-align:&nbsp;center;<br>
+}<br>
+.nav-btn:hover&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;color:&nbsp;tomato;<br>
+}<br>
+.navbar&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;padding:&nbsp;2.5px;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;font-size:&nbsp;20px;<br>
+}</code>&nbsp;</p></div></div><div class="chapter"><div class="titlepage"><div><div><h1 class="title"><a name="d5e244"></a>Kapitola 5. PDF<a class="indexterm" name="d5e246"></a> transformace</h1></div></div></div><p> Jako posledn&iacute; &#269;&aacute;st (mimo DocBooku) pr&aacute;ce bylo dokumenty transformovat do form&aacute;tu
+                    PDF<a class="indexterm" name="d5e249"></a>. Na tuto transformaci jsem op&#283;t
+            vyu&#382;il XSLT<a class="indexterm" name="d5e251"></a> styly a tak&eacute; [<span class="citation">FO
+                procesor</span>]. V&yacute;sledn&yacute; soubor jsem pojmenoval jako
+                <code class="filename">posd03_xsl_fo.xsl</code>. Jedn&aacute; se o velmi podobnou transformaci jako
+            u HTML<a class="indexterm" name="d5e255"></a>, akor&aacute;t je nutn&eacute; v&yacute;sledn&yacute;
+                    XSLT<a class="indexterm" name="d5e257"></a> styl, kter&yacute; obsahuje fo
+            blocky a ostatn&iacute; elementy dan&eacute;ho jmenn&eacute;ho prostoru, p&#345;ev&eacute;st pomoc&iacute; FO procesoru do
+                    PDF<a class="indexterm" name="d5e259"></a>. Soubor vygenerovan&yacute; z
+            procesoru se jmenuje <code class="filename">evidence.pdf</code>
+        </p><p>
+            V&yacute;sledn&yacute; dokument je rozd&#283;len na v&iacute;ce &#269;&aacute;st&iacute; a m&aacute; jin&yacute; design ne&#382;, kter&yacute; jsem pou&#382;il v HTML<a class="indexterm" name="d5e263"></a> str&aacute;nk&aacute;ch.
+            &Uacute;vodn&iacute; strana obsahuje z&aacute;kladn&iacute; informace a tak&eacute; logo &#353;koly. Na druh&eacute; str&aacute;nce je obsah s odkazy, tak&#382;e je mo&#382;n&eacute;
+            se kliknut&iacute;m p&#345;en&eacute;st na jin&eacute; m&iacute;sto v dokumentu. Pot&eacute; ji&#382; n&aacute;sleduj&iacute; kapitoly: z&aacute;znamy o platnosti pr&#367;kaz&#367;, ob&#269;ansk&eacute; pr&#367;kazy 
+            a uk&aacute;zka ob&#269;ansk&eacute;ho pr&#367;kazu.           
+        </p><p>
+            <span class="strong"><strong>Vytvo&#345;en&iacute; layoutu dokumentu</strong></span>
+            </p><div class="literallayout"><p><code class="code">&lt;fo:layout-master-set&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;fo:simple-page-master&nbsp;master-name="pdf-page"&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;page-height="297mm"&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;page-width="210mm"&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;fo:region-body&nbsp;margin="15mm"/&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;fo:region-before&nbsp;extent="10mm"/&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;fo:region-after&nbsp;extent="10mm"/&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/fo:simple-page-master&gt;<br>
+&lt;/fo:layout-master-set&gt;</code>&nbsp;</p></div><p>
+            Tato &#269;&aacute;st k&oacute;du vytvo&#345;&iacute; rozlo&#382;en&iacute; str&aacute;nky, tj. rozm&#283;ry, odsazen&iacute; v z&aacute;hlav&iacute; a z&aacute;pat&iacute;, jazyk a font dokumentu.       
+        </p><p>
+            <span class="strong"><strong>Vytvo&#345;en&iacute; str&aacute;nek pro ob&#269;ansk&eacute; pr&#367;kazy</strong></span>
+            </p><div class="literallayout"><p><code class="code">&lt;xsl:template&nbsp;match="prefix:obcansky_prukaz"&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;fo:block&nbsp;id="{generate-id(.)}"&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text-align="center"&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;font-size="24px"&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;font-weight="bold"&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;margin-top="15px"&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Ob&#269;ansk&yacute;&nbsp;pr&#367;kaz&nbsp;-&nbsp;&#269;.&nbsp;&lt;xsl:value-of&nbsp;select="./@id"/&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/fo:block&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;xsl:apply-templates/&gt;<br>
+&lt;/xsl:template&gt;</code>&nbsp;</p></div><p> Tento kousek k&oacute;du n&aacute;m zajist&iacute;, &#382;e ka&#382;d&yacute; ob&#269;ansk&yacute; pr&#367;kaz se bude vypisovat na novou
+            str&aacute;nku a tak&eacute; dostane sv&eacute; identifika&#269;n&iacute; &#269;&iacute;slo pro aktivn&iacute; obsah pomoc&iacute; funkce
+                [<span class="citation">generate-id</span>] stejn&#283; jako v
+                    HTML<a class="indexterm" name="d5e276"></a> transformaci. Element
+                [<span class="citation">apply-templates</span>] vyp&iacute;&#353;e obsah ka&#382;d&eacute;ho ob&#269;ansk&eacute;ho pr&#367;kazu na jeho
+            p&#345;&iacute;slu&#353;nou str&aacute;nku. </p><p>
+            <span class="strong"><strong>Uk&aacute;zka vyps&aacute;n&iacute; vydavatele pr&#367;kazu</strong></span>
+            </p><div class="literallayout"><p><code class="code">&lt;xsl:template&nbsp;match="prefix:vydavatel"&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;fo:block&nbsp;font-size="20px"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;font-weight="bold"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;margin-top="15px"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;margin-bottom="15px"&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&Uacute;daje&nbsp;o&nbsp;vydavateli<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/fo:block&gt;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;fo:block&nbsp;break-after="page"&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Vydavatel:&nbsp;&lt;xsl:value-of&nbsp;select="."/&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/fo:block&gt;<br>
+&lt;/xsl:template&gt;</code></p></div><p> K&oacute;d &#345;e&#353;&iacute; v&yacute;pis konkr&eacute;tn&iacute; hodnoty vydavatele z ob&#269;ansk&eacute;ho pr&#367;kazu. Pomoc&iacute; templatu
+            jsem se do po&#382;adovan&eacute;ho elementu dostal, a proto hodnotu dan&eacute;ho elementu vyp&iacute;&#353;u v
+                [<span class="citation">xpath</span>] v&yacute;razu pomoc&iacute; [<span class="citation">.</span>]. Atribut
+                [<span class="citation">break-after</span>] provede konec str&aacute;nky a t&iacute;m p&aacute;dem se ostatn&iacute; data
+            ji&#382; budou vypisovat na dal&#353;&iacute; str&aacute;nku. T&iacute;mto se pak ka&#382;d&yacute; ob&#269;ansk&yacute; pr&#367;kaz vypisuje na
+            samostatn&eacute; str&aacute;nce. </p></div></div></body></html>

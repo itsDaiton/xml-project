@@ -1,0 +1,485 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<book xmlns="http://docbook.org/ns/docbook" version="5.0" xml:lang="cs">
+    
+    <info>
+        <title>Semestrální práce - evidence občanských průkazů</title>
+        <author>
+            <personname>
+                <firstname>David</firstname>
+                <surname>Poslušný</surname>
+            </personname>
+            <email>posd03@vse.cz</email>
+        </author>
+    </info> 
+        
+    <index></index>
+    
+    <preface>
+        <title>Úvod</title>
+        <para> Tato dokumentace obsahuje popis všech vytvořených částí semestrální práce v předmětu
+            4IZ238 XML<indexterm><primary>XML</primary></indexterm> - Teorie a praxe značkovacích
+            jazyků. Dále lze v dokumentaci nalézt ukázky kódu a soupis elementů tvořící vytvořený
+            značkovací jazyk. V semestrální práci bylo za úkol vytvořit
+                    XML<indexterm><primary>XML</primary></indexterm> dokument a k němu navrhnout
+            odpovídající schéma i s využitím
+                schematronu<indexterm><primary>schematron</primary></indexterm>. Poté bylo nutné
+            daný dokument, popřípadě dokumenty, převést do značkovacího jazyka
+                    HTML<indexterm><primary>HTML</primary></indexterm> pomocí
+                    XSLT<indexterm><primary>XSLT</primary></indexterm> stylů a také využít procesor
+            FO pro převod práce do formátu PDF<indexterm><primary>PDF</primary></indexterm>. </para>
+    </preface>
+    
+    <chapter>
+        <title>XML<indexterm><primary>XML</primary></indexterm> dokument</title>       
+        <para>
+            Jako XML<indexterm><primary>XML</primary></indexterm> dokument jsem se v mé semestrální práce rozhodl vytvořit občanský průkaz, respektive evidenci
+            občanských průkazů, protože dokumentů vytvářím více. Bylo tedy nutné zjistit, které všechny údaje se vyskytují
+            na skutečném občanském průkazu a přetvořit je na XML<indexterm><primary>XML</primary></indexterm> elementy.
+        </para>
+        <para>
+            XML<indexterm><primary>XML</primary></indexterm> dokument se dělí v celku na 4 části, kde každá část vždy obsahuje nějaké údaje o držiteli průkazu. 
+            První část jsou osobní údaje jako např. jméno, příjmení, pohlaví. Druhá část obsahuje informace o datu a místu narození.
+            V třetí části jsou zaznamenány informace o platnosti samotného průkazu a v poslední části je uvedeno trvalé bydliště, tj.
+            adresa daného člověka. Informace o občanství a vydavateli průkazu nejsou zahrnuty do žádné části.           
+        </para>
+        <para>
+            Popis každého konkrétního elementu v dokumentu vysvětluje následující tabulka:
+            <table>
+                <title>Popis elementů</title>
+                <tgroup cols="2">
+                    <colspec colwidth="4cm" align="center"/>
+                    <colspec colwidth="10cm" align="left"/>
+                    <thead>
+                        <row>
+                            <entry>Element</entry>
+                            <entry>Popis</entry>
+                        </row>
+                    </thead>
+                    <tbody>
+                        <row>
+                            <entry>obcansky_prukaz</entry>
+                            <entry>kořenový element, který obsahuje atribut id, tj. identifikační číslo průkazu</entry>
+                        </row>
+                        <row>
+                            <entry>osobni_udaje</entry>
+                            <entry>element, který seskupuje osobní údaje a má jako atribut rodné číslo držitele průkazu</entry>
+                        </row>
+                        <row>
+                            <entry>jmeno</entry>
+                            <entry>křestní jméno držitele</entry>
+                        </row>
+                        <row>
+                            <entry>prijmeni</entry>
+                            <entry>příjmení držitele</entry>
+                        </row>
+                        <row>
+                            <entry>pohlavi</entry>
+                            <entry>pohlaví držitele</entry>
+                        </row>
+                        <row>
+                            <entry>rodinny_stav</entry>
+                            <entry>rodinný stav držitele (svobodný, rozvedená, vdaná...)</entry>
+                        </row>
+                        <row>
+                            <entry>narozeni</entry>
+                            <entry>element, který seskupuje údaje o datu a místu narození držitele</entry>
+                        </row>
+                        <row>
+                            <entry>datum</entry>
+                            <entry>element, který seskupuje údaje o nějakém datu - typ data je určen jeho atributem</entry>
+                        </row>
+                        <row>
+                            <entry>den</entry>
+                            <entry>den v měsíci</entry>
+                        </row>
+                        <row>
+                            <entry>mesic</entry>
+                            <entry>měsíc v roce</entry>
+                        </row>
+                        <row>
+                            <entry>rok</entry>
+                            <entry>rok, který společně s dnem a měsícem tvoří datum</entry>
+                        </row>
+                        <row>
+                            <entry>misto</entry>
+                            <entry>element seskupující informace o místu narození</entry>
+                        </row>
+                        <row>
+                            <entry>mesto</entry>
+                            <entry>město, popřípadě obec narození držitele</entry>
+                        </row>
+                        <row>
+                            <entry>obvod</entry>
+                            <entry>městská část či městský obvod daného města/obce</entry>
+                        </row>
+                        <row>
+                            <entry>obcanstvi</entry>
+                            <entry>informace o tom, v jaké zemi má držitel právem přiznané občanství</entry>
+                        </row>
+                        <row>
+                            <entry>platnost</entry>
+                            <entry>element seskupující data platnosti průkazu</entry>
+                        </row>
+                        <row>
+                            <entry>adresa</entry>
+                            <entry>element, který seskupuje podrobné informace o trvalém bydliště držitele</entry>
+                        </row>
+                        <row>
+                            <entry>ulice</entry>
+                            <entry>ulice, v které držitel bydlí</entry>
+                        </row>
+                        <row>
+                            <entry>cp</entry>
+                            <entry>číslo popisné domu, ve kterém držitel bydlí</entry>
+                        </row>
+                        <row>
+                            <entry>okres</entry>
+                            <entry>okres do kterého patří město/obec v kterém držitel bydlí</entry>
+                        </row>
+                        <row>
+                            <entry>vydavatel</entry>
+                            <entry>informace o tom, který úřad tento průkaz vydal</entry>
+                        </row>
+                    </tbody>
+                </tgroup>
+            </table>
+        </para>
+    </chapter>
+    
+    <chapter>
+        <title>XML<indexterm><primary>XML</primary></indexterm> schema</title>
+        <para> Soubor obsahující XML<indexterm><primary>XML</primary></indexterm> schéma
+                <filename>posd03_schema.xsd</filename> v semestrální práci využívám pro validaci
+                    XML<indexterm><primary>XML</primary></indexterm> dokumentu. Schéma bylo
+            vytvořeno podle metody slepého Benátčana a obsahuje strukturu a kontroly, které musí
+            vytvořené XML<indexterm><primary>XML</primary></indexterm> dokumenty splňovat. </para>
+        <para>
+            Ve schématu nejčastěji kontroluji formáty jednotlivých elementů přes regulární výrazy. 
+            Například pro rodné číslo, název českého města nebo identifikační číslo. Nutné bylo také zkontrolovat
+            formáty dat u platnosti průkazu a u data narození. U jednoduchých textových údajů jako je například jméno,
+            příjmení, pohlaví stačilo pouze omezit počet znaků.
+        </para>
+        <para>
+            <emphasis role="strong">Příklad kontroly rodného čísla</emphasis>
+            <literallayout><code><![CDATA[<xsd:simpleType name="rodne_cisloType">
+    <xsd:restriction base="xsd:string">
+        <xsd:pattern value="[0-9]{6}\/[0-9]{4}"/>
+    </xsd:restriction>
+</xsd:simpleType>]]></code></literallayout></para>
+        <para> Tato kontrola konkrétně využívá regulární výraz. Jedná se o lehký výraz, který nám
+            zajistí, že prvních 6 znaků budou pouze číslice, dále musí být uvedeno lomítko, kterému
+            následují 4 číslice. Pokud tento formát nebude splněn, schéma nám vyhodí chybu a daný
+            pattern se nám ukáže, abychom poté data mohli do elementu napsat správně. </para>
+        <para>
+            <emphasis role="strong">Příklad kontroly rodinného stavu</emphasis>
+            <literallayout><code><![CDATA[<xsd:simpleType name="rodinny_stavType">
+    <xsd:restriction base="xsd:string">
+        <xsd:enumeration value="svobodný"/>
+        <xsd:enumeration value="ženatý"/>
+        <xsd:enumeration value="rozvedený"/>
+        <xsd:enumeration value="vdovec"/>
+        <xsd:enumeration value="svobodná"/>
+        <xsd:enumeration value="vdaná"/>
+        <xsd:enumeration value="rozvedená"/>
+        <xsd:enumeration value="vdova"/>
+    </xsd:restriction>
+</xsd:simpleType>]]></code> </literallayout></para>
+        <para>
+            Rodinný stav nemůže nabývat jiných hodnot, než uvedených ve výčtu <citation>rodinny_stavType</citation>.
+            V této kontrole se jedná o využití <code><![CDATA[<xsd:enumeration/>]]></code> kde můžeme výčtem určit,
+            které hodnoty se přesně musí v daném elementu objevovat. Nelze tedy například do rodinného stavu napsat
+            anglický výraz "single" místo "svobodný", nebo jakýkoliv jiný textový řetězec.
+        </para>
+        <para> Ve schématu jsem také využil referenční integritu, konkrétně 2 pravidla, které
+            kontrolují unikátnosti atributů v určitých elementech. </para>
+        <para>
+            <emphasis role="strong">Ukázka referenčí integrity</emphasis>
+            <literallayout><code><![CDATA[<xsd:key name="unikatniTypyDatumu">
+    <xsd:selector xpath="prefix:platnost/prefix:datum"/>
+    <xsd:field xpath="@typ"/>
+</xsd:key>]]></code></literallayout></para>
+        <para> Z kódu lze vidět, že se zakličuje datum v platnosti, nikoliv v narození, a poté
+            pomocí elementu <citation>field</citation> z jmenného prostoru <citation>xsd</citation>
+            nastavíme, že daná data nesmí mít stejnou hodnotu atributu. Toto pravidlo jsem vytvořil
+            za účelem, aby nebylo možné mít v dokumentu dvakrát datum vypršení či datum vydání. </para>
+    </chapter>
+    
+    <chapter>
+        <title>Schematron<indexterm><primary>schematron</primary></indexterm></title>
+        <para> Dalším úkolem v semestrální práci bylo rozšířit předchozí
+                    XML<indexterm><primary>XML</primary></indexterm> schéma o
+                    schematron<indexterm><primary>schematron</primary></indexterm>, či vytvořit
+            samostatný soubor s danou technologií. V této práci jsem se rozhodl vytvořit nový soubor
+                        <filename>posd03_schematron<indexterm><primary>schematron</primary></indexterm>.sch</filename>
+            a do něj vložit danou kontrolu. </para>
+        <para>
+            <emphasis role="strong">Kontrola pomocí
+                        schematronu<indexterm><primary>schematron</primary></indexterm></emphasis>
+            <literallayout><code><![CDATA[<pattern>
+    <title>Kontrola platnosti průkazu</title>
+    <rule context="prefix:obcansky_prukaz">
+    <report test="prefix:platnost[1]/prefix:datum[2]/prefix:rok[1]
+     != 
+    (prefix:platnost[1]/prefix:datum[1]/prefix:rok[1]) + 10">
+    Průkaz musí být platný 10 let od jeho vydání.
+    Současná platnost je: 
+    <value-of select="prefix:platnost[1]/prefix:datum[2]/prefix:rok[1]
+     - 
+    prefix:platnost[1]/prefix:datum[1]/prefix:rok[1]"/> let.
+    </report>
+    </rule>
+</pattern>]]></code> </literallayout></para>
+        <para> Jak je vidět z titulku pravidla, jedná se o kontrolu platnosti průkazu. Ve schématu
+            provedeme <citation>test</citation>, který nám otestuje, jestli je rozdíl obou dat v
+            platnosti 10 či nikoliv. Pomocí elementu <citation>report</citation> pak dostaneme
+            zprávu o výsledku testu a také se uživateli vypíše současná platnost, tj. pokud
+            například průkaz platí od 2005 do 2025, tak je to špatně, protože to není 10 let, ale 20
+            let. Pravidlo neřeší dny a měsíce, ale pouze roky. Smysl tohoto pravidla je, že v České
+            republice se občanské průkazy vydávají s platností 5 let pro osoby mladší 15 let, s
+            platností 10 let pro osoby starší 15 let a poté již s platností 35 let pro osoby staří
+            75 let. Počítat věk daného držitele z XML<indexterm><primary>XML</primary></indexterm>
+            dokumentu a poté rozlišovat platnost jednotlivých průkazu mi přišlo moc složité, proto
+            jsem tedy platnost standardizoval na 10 let. </para>
+        
+        
+    </chapter>
+    
+    <chapter>
+        <title>HTML<indexterm><primary>HTML</primary></indexterm> transformace</title>
+        <para> Transformaci do značkovacího jazyka
+                HTML<indexterm><primary>HTML</primary></indexterm> jsem provedl pomocí
+                    XSLT<indexterm><primary>XSLT</primary></indexterm> stylů uložených v souboru
+                <filename>posd03_xslt.xsl</filename>. Soubor je tvořen pomocí templatů, které nám
+            pomáhají daný výstup z XML<indexterm><primary>XML</primary></indexterm> dokumentu
+            převést do HTML<indexterm><primary>HTML</primary></indexterm>. Jelikož jsem měl více
+            občanských průkazů a neměl jsem vytvořený žádný kořenový element
+                <citation>evidence</citation> nebo něco obdobného, bylo nutné vytvořit nový soubor
+                <filename>posd03_evidence.xml</filename>, v kterém jsem připojil všechny vytvořené
+                    XML<indexterm><primary>XML</primary></indexterm> dokumenty do jednoho souboru,
+            aby jej mohly XSLT<indexterm><primary>XSLT</primary></indexterm> styly rozpoznat a
+            úspěšně transformovat. </para>
+        <para>
+            <emphasis role="strong">Soubor evidence, který seskupuje všechny
+                        XML<indexterm><primary>XML</primary></indexterm> dokumenty</emphasis>
+            <literallayout><code><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<evidence>
+    <soubor name="posd03_dokument1.xml"></soubor>
+    <soubor name="posd03_dokument2.xml"></soubor>
+    <soubor name="posd03_dokument3.xml"></soubor>
+    <soubor name="posd03_dokument4.xml"></soubor>
+    <soubor name="posd03_dokument5.xml"></soubor>
+    <soubor name="posd03_dokument6.xml"></soubor>
+</evidence>]]></code></literallayout></para>
+        <para>
+            Daný soubor nám umožňuje na dokumenty odkazovat pomocí atributu <citation>name</citation>. 
+            Pokud bychom chtěli vypsat do HTML<indexterm><primary>HTML</primary></indexterm> obsah jednotlivých dokumentů, lze tak učinit pomocí funkce 
+            <citation>document(@name)/*</citation>. Funkce nám vezme všechny dokumenty podle atributu a vypíše jejich
+            celý obsah (tento fakt zaručí <citation>*</citation>).
+        </para>
+        <para>
+            Jako první jsem pomocí transformace vytvořil hlavní stránku s názvem <filename>evidence.html</filename>, v které
+            je navigace, která odkazuje na jednotlivé stránky s podrobným výpisem informací z každého občanského průkazu.
+            Dále je na stránce nestrukturovaný výčet zobrazený jako tabulka, kde můžeme najít všechny data na jednom místě.
+            Zároveň je na stránce vložen obrázek nevyplněného vzoru občanského průkazu.
+        </para>
+        <para>
+            <emphasis role="strong">Vytvoření HTML kostry hlavní stránky</emphasis>
+            <literallayout><code><![CDATA[<xsl:template match="/">
+   <xsl:result-document href="evidence.html">
+    <html lang="cs">
+     <head>
+      <title>Evidence občanských průkazů</title>  
+       <link rel="stylesheet" type="text/css" href="styles.css"/>
+       <meta name="author" content="David Poslušný"/>
+       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+     </head>
+     <body>
+      <h1>Evidence občanských průkazů</h1>
+      <h3>Obsah evidence</h3>                   
+      <xsl:call-template name="navigace"/>
+      <p class="warning">
+      *Poznámka: odkaz na konkrétní občanský průkaz je tvořen
+      identifikačním číslem průkazu a celým jménem držitele.
+      </p>
+      <h2 class="heading-center">
+      Nestrukturovaný výčet z evidence
+      </h2>
+      <xsl:for-each select="/evidence/soubor">
+       <xsl:apply-templates select="document(@name)/*"/>
+      </xsl:for-each>]]></code></literallayout></para>
+        <para> Zde můžeme vidět kus kódu, který nám vytvoří základní kostru
+                    HTML<indexterm><primary>HTML</primary></indexterm> pro hlavní stránku. Bylo
+            nutné zde uvést všechny náležitosti HTML<indexterm><primary>HTML</primary></indexterm>5,
+            aby byla stránka validní. Do těla stránky jsem vložil odkaz na template navigace a také
+            se zde pomocí cyklu <citation>for-each</citation> vypisují informace z dokumentů pomocí
+            dříve zmíněné funkce <citation>document()</citation>. Je zde však důležité určit
+            kolikrát se má cyklus provést, v mém případě kolik je tam elementů
+                <citation>soubor</citation>, tj. kolik mám dokumentů. </para>
+        <para> Dále bylo nutné transformovat všechny dokumenty do samostatných stránek, a také na ně
+            vytvořit odkaz. Vytvořil jsem tedy template pro kořenový element
+                <citation>obcansky_prukaz</citation>. Uvnitř templatu bylo nezbytné pomocí elementu
+                <citation>result-document</citation> vytvořit nový
+                    HTML<indexterm><primary>HTML</primary></indexterm> dokument, stejným způsobem
+            jako hlavní stránku. Do těchto jednotlivých stránek jsem pak elementem
+                <citation>apply-imports</citation> vložil data, která k danému dokumentu patří a
+            bylo potřeba už jen dokument "stylizovat". </para>
+        <para>
+            <emphasis role="strong">Ukázka vytvoření stránek pro občanské průkazy</emphasis>
+            <literallayout><code><![CDATA[<xsl:template match="prefix:obcansky_prukaz">
+   <xsl:result-document href="obcansky_prukaz_{generate-id(.)}.html">
+    <html lang="cs">
+     <head>
+      <title><xsl:value-of select="./@id"/></title>
+      <link rel="stylesheet" type="text/css" href="styles.css"/>
+      <meta name="author" content="David Poslušný"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+     </head>
+     <body>
+      <h1>Občanský průkaz - č. <xsl:value-of select="./@id"/></h1>
+      <xsl:apply-imports/>                      
+      <p style="text-align: center; margin-top: 50px;">
+      <a class="nav-btn" href="evidence.html">
+      Zpět na evidenci
+      </a>
+      </p> 
+      </body>
+     </html>
+    </xsl:result-document>
+</xsl:template>]]></code></literallayout></para>
+        <para> Pro navigaci a očíslování jednotlivých stránek jsem využil funkci
+                <citation>generate-id</citation>, která vytvoří unikátní identifikační číslo tomu
+            elementu, v kterém se zrovna nacházíme, co se templatů týče. Je tedy nezbytné pomocí
+                <citation>xpath</citation> výrazu najít cestu k elementu, který chceme využít. V mém
+            případě se jedná o celý občanský průkaz a proto vyberu element
+                <citation>obcansky_prukaz</citation>. </para>
+        <para>
+            <emphasis role="strong">Ukázka vytvoření navigace</emphasis>
+            <literallayout><code><![CDATA[<xsl:template name="navigace">
+   <ul>
+    <xsl:for-each select="//soubor"> 
+     <li class="navbar">
+      <a class="nav-btn" 
+      href=
+      "obcansky_prukaz_{generate-id(document(@name)
+      /prefix:obcansky_prukaz)}.html">
+      <xsl:value-of select="document(@name)//@id"/>
+       - 
+      <xsl:value-of select="document(@name)//prefix:jmeno"/>
+      <xsl:text>&#032;</xsl:text>
+      <xsl:value-of select="document(@name)//prefix:prijmeni"/>
+      <xsl:apply-templates/>
+      </a>
+      <br/>
+     </li>            
+    </xsl:for-each>
+   </ul>
+</xsl:template>]]></code></literallayout></para>
+        <para> V tomto úseku kódu vytvářím navigaci pomocí zmíněné funkce
+                <citation>generate-id</citation>. Identifikační číslo se vytvoří pro každý občanský
+            průkaz a vloží se do HTML<indexterm><primary>HTML</primary></indexterm> tagu
+                <citation>a</citation> jako odkaz. Při vytváření jednotlivých stránek pro průkazy
+            jsem do <citation>URL</citation> vložil opět stejnou funkci a pokud se jedná o stejný
+            elemenent, tak ID se uloží přímo do odkazu na stránku a tím pádem se nám zajistí
+            funkčnost navigace. Odkaz na stránku pak může vypadat například takto:
+                <filename>obcansky_prukaz_d2e1.html</filename>
+        </para>
+        <para>
+            V neposlední řadě jsem k transformaci také připojil <citation>CSS</citation> styly, pomocí kterých jsem například vytvořil
+            ohraničení tabulky, rozestup mezi textem na stránce anebo velikost písma či font celého dokumentu.
+        </para>
+        <para>
+            <emphasis role="strong">Ukázka kaskádových stylů</emphasis>
+            <literallayout><code><![CDATA[html {
+    font-family: 'Segoe UI'; 
+}
+h1 {
+    text-align: center;
+}
+.heading-center {
+    text-align: center;
+}
+.nav-btn:hover {
+    color: tomato;
+}
+.navbar {
+    padding: 2.5px;
+    font-size: 20px;
+}]]></code> </literallayout></para>
+    </chapter>
+    
+    <chapter>
+        <title>PDF<indexterm><primary>PDF</primary></indexterm> transformace</title>
+        <para> Jako poslední část (mimo DocBooku) práce bylo dokumenty transformovat do formátu
+                    PDF<indexterm><primary>PDF</primary></indexterm>. Na tuto transformaci jsem opět
+            využil XSLT<indexterm><primary>XSLT</primary></indexterm> styly a také <citation>FO
+                procesor</citation>. Výsledný soubor jsem pojmenoval jako
+                <filename>posd03_xsl_fo.xsl</filename>. Jedná se o velmi podobnou transformaci jako
+            u HTML<indexterm><primary>HTML</primary></indexterm>, akorát je nutné výsledný
+                    XSLT<indexterm><primary>XSLT</primary></indexterm> styl, který obsahuje fo
+            blocky a ostatní elementy daného jmenného prostoru, převést pomocí FO procesoru do
+                    PDF<indexterm><primary>PDF</primary></indexterm>. Soubor vygenerovaný z
+            procesoru se jmenuje <filename>evidence.pdf</filename>
+        </para>
+        <para>
+            Výsledný dokument je rozdělen na více částí a má jiný design než, který jsem použil v HTML<indexterm><primary>HTML</primary></indexterm> stránkách.
+            Úvodní strana obsahuje základní informace a také logo školy. Na druhé stránce je obsah s odkazy, takže je možné
+            se kliknutím přenést na jiné místo v dokumentu. Poté již následují kapitoly: záznamy o platnosti průkazů, občanské průkazy 
+            a ukázka občanského průkazu.           
+        </para>
+        <para>
+            <emphasis role="strong">Vytvoření layoutu dokumentu</emphasis>
+            <literallayout><code><![CDATA[<fo:layout-master-set>
+             <fo:simple-page-master master-name="pdf-page" 
+                                    page-height="297mm" 
+                                    page-width="210mm" 
+                                    >
+                 <fo:region-body margin="15mm"/>
+                 <fo:region-before extent="10mm"/>
+                 <fo:region-after extent="10mm"/>
+                 </fo:simple-page-master>
+</fo:layout-master-set>]]></code> </literallayout></para>
+        <para>
+            Tato část kódu vytvoří rozložení stránky, tj. rozměry, odsazení v záhlaví a zápatí, jazyk a font dokumentu.       
+        </para>
+        <para>
+            <emphasis role="strong">Vytvoření stránek pro občanské průkazy</emphasis>
+            <literallayout><code><![CDATA[<xsl:template match="prefix:obcansky_prukaz">
+    <fo:block id="{generate-id(.)}" 
+              text-align="center" 
+              font-size="24px" 
+              font-weight="bold" 
+              margin-top="15px">
+    Občanský průkaz - č. <xsl:value-of select="./@id"/>
+    </fo:block>
+    <xsl:apply-templates/>
+</xsl:template>]]></code> </literallayout></para>
+        <para> Tento kousek kódu nám zajistí, že každý občanský průkaz se bude vypisovat na novou
+            stránku a také dostane své identifikační číslo pro aktivní obsah pomocí funkce
+                <citation>generate-id</citation> stejně jako v
+                    HTML<indexterm><primary>HTML</primary></indexterm> transformaci. Element
+                <citation>apply-templates</citation> vypíše obsah každého občanského průkazu na jeho
+            příslušnou stránku. </para>
+        <para>
+            <emphasis role="strong">Ukázka vypsání vydavatele průkazu</emphasis>
+            <literallayout><code><![CDATA[<xsl:template match="prefix:vydavatel">
+      <fo:block font-size="20px"
+                font-weight="bold"
+                margin-top="15px"
+                margin-bottom="15px">
+      Údaje o vydavateli
+      </fo:block> 
+      <fo:block break-after="page">
+      Vydavatel: <xsl:value-of select="."/>
+      </fo:block>
+</xsl:template>]]></code></literallayout></para>
+        <para> Kód řeší výpis konkrétní hodnoty vydavatele z občanského průkazu. Pomocí templatu
+            jsem se do požadovaného elementu dostal, a proto hodnotu daného elementu vypíšu v
+                <citation>xpath</citation> výrazu pomocí <citation>.</citation>. Atribut
+                <citation>break-after</citation> provede konec stránky a tím pádem se ostatní data
+            již budou vypisovat na další stránku. Tímto se pak každý občanský průkaz vypisuje na
+            samostatné stránce. </para>       
+        
+    </chapter>
+       
+</book>

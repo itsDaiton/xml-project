@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<obcansky_prukaz xmlns="https://www.posd03-ns.cz/LS2021"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="https://www.posd03-ns.cz/LS2021 posd03_schema.xsd"
+    id="741598771">
+    <osobni_udaje rodne_cislo="816214/1234">
+        <jmeno>Anna</jmeno>
+        <prijmeni>Pomalá</prijmeni>
+        <pohlavi>Žena</pohlavi>
+        <rodinny_stav>vdaná</rodinny_stav>
+    </osobni_udaje>
+    <narozeni>
+        <datum typ="narozeni">
+            <den>14</den>
+            <mesic>12</mesic>
+            <rok>1981</rok>
+        </datum>
+        <misto>
+            <mesto>Brno</mesto>
+            <obvod>Bosonohy</obvod>
+        </misto>
+    </narozeni>
+    <obcanstvi>Česká republika</obcanstvi>
+    <platnost>
+        <datum typ="vydani">
+            <den>16</den>
+            <mesic>10</mesic>
+            <rok>2016</rok>
+        </datum>
+        <datum typ="vyprseni">
+            <den>16</den>
+            <mesic>10</mesic>
+            <rok>2026</rok>
+        </datum>
+    </platnost>
+    <adresa druh="postovni">
+        <mesto>Pardubice</mesto>
+        <ulice>Hranatá</ulice>
+        <cp>500900</cp>
+        <okres>Pardubice-Sever</okres>
+    </adresa>
+    <vydavatel>Pardubice - magistrát města</vydavatel>
+</obcansky_prukaz>

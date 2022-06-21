@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"  
+            targetNamespace="https://www.posd03-ns.cz/LS2021"
+            xmlns="https://www.posd03-ns.cz/LS2021"
+            xmlns:prefix="https://www.posd03-ns.cz/LS2021"
+            elementFormDefault="qualified">      
+    
+    <!-- ID občanského průkazu musí být 9 ciferné číslo. -->
+    <xsd:simpleType name="idType">
+        <xsd:restriction base="xsd:string">
+            <xsd:pattern value="\d{9}"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+      
+    <!-- Rodné číslo musí formát českého rodného čísla. -->
+    <xsd:simpleType name="rodne_cisloType">
+        <xsd:restriction base="xsd:string">
+            <xsd:pattern value="[0-9]{6}\/[0-9]{4}"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    
+    <!-- Jméno musí mít délku mezi 1 až 16 znaky. -->
+    <xsd:simpleType name="jmenoType">
+        <xsd:restriction base="xsd:string">
+            <xsd:minLength value="1"/>
+            <xsd:maxLength value="16"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    
+    <!-- Příjmení musí mít delků mezi 1 až 20 znaky. -->
+    <xsd:simpleType name="prijmeniType">
+        <xsd:restriction base="xsd:string">
+            <xsd:minLength value="1"/>
+            <xsd:maxLength value="20"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    
+    <!-- Pohlaví musí být žena nebo muž. -->
+    <xsd:simpleType name="pohlaviType">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="Muž"/>
+            <xsd:enumeration value="Žena"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    
+    <!-- Rodinný stav musí být jedna z následujících možností. -->
+    <xsd:simpleType name="rodinny_stavType">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="svobodný"/>
+            <xsd:enumeration value="ženatý"/>
+            <xsd:enumeration value="rozvedený"/>
+            <xsd:enumeration value="vdovec"/>
+            <xsd:enumeration value="svobodná"/>
+            <xsd:enumeration value="vdaná"/>
+            <xsd:enumeration value="rozvedená"/>
+            <xsd:enumeration value="vdova"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    
+    <!-- Atribut typ u datumu musí mít jedna z následujících možností. -->
+    <xsd:simpleType name="datumTypType">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="narozeni"/>
+            <xsd:enumeration value="vydani"/>
+            <xsd:enumeration value="vyprseni"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    
+    <!-- Den musí mít hodnoty mezi 1 až 31. -->
+    <xsd:simpleType name="denType">
+        <xsd:restriction base="xsd:int">
+            <xsd:minInclusive value="1"/>
+            <xsd:maxInclusive value="31"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    
+    <!-- Měsíc musí mít hodnoty mezi 1 až 12. -->
+    <xsd:simpleType name="mesicType">
+        <xsd:restriction base="xsd:int">
+            <xsd:minInclusive value="1"/>
+            <xsd:maxInclusive value="12"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    
+    <!-- Rok je číslo s minimální hodnotou 1900. -->
+    <xsd:simpleType name="rokType">
+        <xsd:restriction base="xsd:int">
+            <xsd:minInclusive value="1900"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    
+    <!-- Obecný formát využivaný pro ulici, město, obvod... První písmeno velké a zbytek malé. -->
+    <xsd:simpleType name="mistoStringType">
+        <xsd:restriction base="xsd:string">
+            <xsd:pattern value="(\p{Lu}\p{Ll}+ \p{Lu}\p{Ll}+)|(\p{Lu}\p{Ll}+)"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    
+    <!-- První písmeno velké a zbytek malé nebo první písmeno velké mezera a zbytek malé písmena. -->
+    <xsd:simpleType name="obcanstviType">
+        <xsd:restriction base="xsd:string">
+            <xsd:pattern value="(\p{Lu}\p{Ll}+ \p{Ll}+)|(\p{Lu}\p{Ll}+)"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    
+    <!-- Atribut v adrese musí mít vždy hodnotu "postovni". -->
+    <xsd:simpleType name="adresaDruhType">
+        <xsd:restriction base="xsd:string">
+            <xsd:pattern value="postovni"></xsd:pattern>
+        </xsd:restriction>
+    </xsd:simpleType>
+    
+    <!-- Číslo popisné může být jakékoliv celé číslo větší než 0. -->
+    <xsd:simpleType name="cpType">
+        <xsd:restriction base="xsd:int">
+            <xsd:minExclusive value="0"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    
+    <!-- Podobný jako občanství, s rozdílem že lze zadat slova oddělena pomlčkou, např. Praha-Západ. -->
+    <xsd:simpleType name="okresType">
+        <xsd:restriction base="xsd:string">
+            <xsd:pattern value="(\p{Lu}\p{Ll}+ \p{Ll}+)|(\p{Lu}\p{Ll}+)|(\p{Lu}\p{Ll}+-\p{Lu}\p{Ll}+)"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    
+    <!-- Textový řetězec minimálně s jedním znakem, maximálně s 100 znaky. -->
+    <xsd:simpleType name="vydavatelType">
+        <xsd:restriction base="xsd:string">
+            <xsd:minLength value="1"/>
+            <xsd:maxLength value="100"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    
+    <xsd:complexType name="osobni_udajeType">
+        <xsd:sequence>
+            <xsd:element name="jmeno" type="jmenoType"/>
+            <xsd:element name="prijmeni" type="prijmeniType"/>
+            <xsd:element name="pohlavi" type="pohlaviType"/>
+            <xsd:element name="rodinny_stav" type="rodinny_stavType"/>
+        </xsd:sequence>
+        <xsd:attribute name="rodne_cislo" type="rodne_cisloType" use="required"/>
+    </xsd:complexType>
+    
+    <xsd:complexType name="datumType">
+        <xsd:sequence>
+            <xsd:element name="den" type="denType"/>
+            <xsd:element name="mesic" type="mesicType"/>
+            <xsd:element name="rok" type="rokType"/>
+        </xsd:sequence>
+        <xsd:attribute name="typ" type="datumTypType" use="required"/>
+    </xsd:complexType>
+    
+    <xsd:complexType name="mistoType">
+        <xsd:sequence>
+            <xsd:element name="mesto" type="mistoStringType"/>
+            <xsd:element name="obvod" type="mistoStringType"/>
+        </xsd:sequence>
+    </xsd:complexType>   
+    
+    <xsd:complexType name="adresaType">
+        <xsd:sequence>
+            <xsd:element name="mesto" type="mistoStringType"/>
+            <xsd:element name="ulice" type="mistoStringType"/>
+            <xsd:element name="cp" type="cpType"/>
+            <xsd:element name="okres" type="okresType"/>
+        </xsd:sequence>
+        <xsd:attribute name="druh" type="adresaDruhType" use="required"/>
+    </xsd:complexType>
+    
+    <xsd:complexType name="platnostType">
+        <xsd:sequence>
+            <xsd:element name="datum" type="datumType" maxOccurs="2"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:complexType name="narozeniType">
+        <xsd:sequence>
+            <xsd:element name="datum" type="datumType"/>
+            <xsd:element name="misto" type="mistoType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:complexType name="obcansky_prukazType">       
+        <xsd:sequence>
+            <xsd:element name="osobni_udaje" type="osobni_udajeType" maxOccurs="1"/>
+            <xsd:element name="narozeni" type="narozeniType" maxOccurs="1"/>
+            <xsd:element name="obcanstvi" type="obcanstviType" maxOccurs="1"/>
+            <xsd:element name="platnost" type="platnostType" maxOccurs="1"/>
+            <xsd:element name="adresa" type="adresaType" maxOccurs="1"/>
+            <xsd:element name="vydavatel" type="vydavatelType" maxOccurs="1"/>
+        </xsd:sequence>
+        <xsd:attribute name="id" type="idType" use="required"/>
+    </xsd:complexType>
+    
+    <xsd:element name="obcansky_prukaz" type="obcansky_prukazType">     
+        
+        <!-- Občanské průkazy musí mít unikatní ID. -->
+        <xsd:key name="idKlic">
+            <xsd:selector xpath="prefix:obcansky_prukaz"/>
+            <xsd:field xpath="@id"/>
+        </xsd:key>     
+        
+        <!-- Datumy v platnosti nesmí mít stejné typy. -->
+        <xsd:key name="unikatniTypyDatumu">
+            <xsd:selector xpath="prefix:platnost/prefix:datum"/>
+            <xsd:field xpath="@typ"/>
+        </xsd:key>
+        
+    </xsd:element>
+    
+</xsd:schema>
