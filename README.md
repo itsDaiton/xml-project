@@ -2,6 +2,9 @@
 
 XML projekt z předmětu XML - Teorie a praxe značkovacích jazyků na VŠE.
 
+![image](https://user-images.githubusercontent.com/72783924/222014176-795345ff-6a9a-4b07-84ea-fe2181367edc.png)
+
+
 ## Popis
 
 Jedná se semestrální práci, která měla za úkol prověřit různé znalosti v oblasti XML a jejich implementaci. Téma práce je tvorba občanských průkazů.
